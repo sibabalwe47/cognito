@@ -9,7 +9,7 @@ resource "aws_cognito_user_pool" "this" {
     }
   }
 
-  auto_verified_attributes = "email"
+  auto_verified_attributes = ["email"]
 
   email_configuration {
     email_sending_account = "COGNITO_DEFAULT"
