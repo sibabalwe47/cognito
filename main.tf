@@ -40,7 +40,7 @@ resource "aws_cognito_user_pool" "this" {
 resource "aws_cognito_user_pool_client" "this" {
   name                          = "${var.name}-client"
   user_pool_id                  = aws_cognito_user_pool.this.id
-  supported_identity_providers  = "COGNITO"
+  supported_identity_providers  = ["COGNITO"]
   explicit_auth_flows           = ["ALLOW_USER_SRP_AUTH", "ALLOW_REFRESH_TOKEN_AUTH", "ALLOW_USER_PASSWORD_AUTH"]
   generate_secret               = false
   prevent_user_existence_errors = "LEGACY"
